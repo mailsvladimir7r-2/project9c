@@ -1,0 +1,231 @@
+:root {
+  /* Палітра кольорів */
+  --color-bg-main: #ffffff;
+  --color-bg-secondary: #eeeff1;
+  --color-accent: #34547a;
+  --color-accent-hover: #284160;
+  --color-text-primary: #000000;
+  --color-text-secondary: #727272;
+  --color-text-inverse: #ffffff;
+
+  /* Типографіка */
+  --font-family-base: "Roboto", sans-serif;
+  --font-size-base: 16px;
+  --font-size-h1: 48px;
+  --font-size-h2: 32px;
+  --font-size-h3: 21px;
+  --line-height-base: 1.64;
+
+  /* Сітка та відступи */
+  --container-max-width: 1110px;
+  --container-padding: 20px;
+  --section-padding-y: 100px;
+  --gap-nav: 42px;
+  --gap-grid: 30px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.page {
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-main);
+}
+
+.container {
+  max-width: calc(var(--container-max-width) + var(--container-padding) * 2);
+  margin: 0 auto;
+  padding-inline: var(--container-padding);
+}
+
+/* Типографіка блоків */
+.section-title {
+  margin: 0 0 40px;
+  font-size: var(--font-size-h2);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.section-text {
+  max-width: 540px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Кнопка (Блок + Модифікатор) */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 225px;
+  min-height: 65px;
+  padding: 18px 40px;
+  font-size: var(--font-size-base);
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.button--primary {
+  color: var(--color-text-inverse);
+  background-color: var(--color-accent);
+}
+
+.button--primary:hover {
+  background-color: var(--color-accent-hover);
+}
+
+/* Header & Navigation (Flexbox) */
+.header {
+  padding-top: 70px;
+  padding-bottom: 20px;
+  background-color: var(--color-bg-secondary);
+}
+
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-nav);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__link {
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.nav__link--active {
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+/* Hero Section */
+.hero {
+  padding-top: 120px;
+  padding-bottom: 140px;
+  background-color: var(--color-bg-secondary);
+}
+
+.hero__content {
+  max-width: 540px;
+}
+
+.hero__title {
+  margin: 0 0 45px;
+  font-size: var(--font-size-h1);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+.hero__description {
+  margin: 0 0 55px;
+}
+
+/* About Section */
+.about {
+  padding-block: var(--section-padding-y);
+  background-color: var(--color-bg-main);
+}
+
+/* Projects Section (CSS Grid + Flexbox у картці) */
+.projects {
+  padding-block: var(--section-padding-y);
+  background-color: var(--color-accent);
+  color: var(--color-text-inverse);
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--gap-grid);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.project-card__icon {
+  flex-shrink: 0;
+}
+
+.project-card__count {
+  margin: 0;
+  font-size: var(--font-size-h3);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-text-inverse);
+}
+
+.project-card__label {
+  margin: 4px 0 0;
+  line-height: 1.2;
+  color: var(--color-text-inverse);
+}
+
+/* Process Section */
+.process {
+  padding-block: var(--section-padding-y);
+  background-color: var(--color-bg-secondary);
+}
+
+.process__media {
+  position: relative;
+  margin-top: 50px;
+  margin-left: 250px;
+}
+
+.process__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  
+}
+
+.process__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  padding-block: 50px;
+  background-color: var(--color-accent);
+  color: var(--color-text-inverse);
+}
+
+.footer__author {
+  margin: 0 0 15px;
+  font-size: var(--font-size-h3);
+  font-weight: 500;
+}
+
+.footer__copyright {
+  margin: 0;
+  font-size: 13px;
+}
